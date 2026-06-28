@@ -3,6 +3,8 @@ import sys
 
 from code.const import *
 from code.menu import Menu
+from code.level import Level
+from code.score import Score
 
 
 class Game:
@@ -29,6 +31,14 @@ class Game:
                 menu = Menu(self.window)
 
                 self.state = menu.run()
+
+            elif self.state == NIVEL:
+                level = Level(self.window)
+                self.state = level.run()
+
+            elif self.state == SCORE:
+                score = Score(self.window)
+                self.state = score.run()
 
 
             elif self.state == SAIR:
