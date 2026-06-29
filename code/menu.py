@@ -24,6 +24,8 @@ class Menu:
 
         self.option_font = pygame.font.SysFont(FONT_NAME, 40)
 
+        self.controller_font = pygame.font.SysFont(FONT_NAME, 30)
+
 
     def draw(self):
 
@@ -35,12 +37,12 @@ class Menu:
             BLUE
         )
 
-        self.window.blit(title, (300, 70))
+        self.window.blit(title, (230, 70))
 
 
         for i, option in enumerate(self.options):
 
-            color = BLUE if i == self.selected else WHITE
+            color = BLUE if i == self.selected else BLACK
 
             text = self.option_font.render(
                 option,
@@ -50,8 +52,20 @@ class Menu:
 
             self.window.blit(
                 text,
-                (390, 250 + i * 60)
+                (410, 210 + i * 60)
             )
+
+        text2 = self.controller_font.render(
+            "SETINHAS OU WASD - MOVIMENTO | ESPAÇO - PULO",
+            True,
+            BLACK
+        )
+
+        self.window.blit(
+            text2,
+            (110, 350 + i * 90)
+        )
+
 
         pygame.display.flip()
 

@@ -16,7 +16,8 @@ class Score:
             (WIN_WIDTH, WIN_HEIGHT)
         )
 
-        self.font = pygame.font.SysFont(FONT_NAME, 40)
+        self.font = pygame.font.SysFont(FONT_NAME, 30)
+        self.parabens = pygame.font.SysFont(FONT_NAME, 40)
 
     def run(self):
 
@@ -25,12 +26,20 @@ class Score:
             self.window.blit(self.background, (0, 0))
 
             text = self.font.render(
-                "ENTER - MENU | ESC - SAIR",
+                "ENTER - VOLTA AO MENU | ESC - SAIR",
                 True,
                 WHITE
             )
 
-            self.window.blit(text, (180, 450))
+            self.window.blit(text, (165, 450))
+
+            text = self.parabens.render(
+                "PARABÉNS!!! VOCÊ DERROTOU O SONIC!",
+                True,
+                WHITE
+            )
+
+            self.window.blit(text, (90, 180))
 
             pygame.display.flip()
 

@@ -24,8 +24,8 @@ class Enemy(Entity):
         self.rect.x += self.speed * self.direction
 
         # Limites do movimento
-        if self.rect.left <= 550:
+        if self.rect.left <= 0:
             self.direction = 1
 
-        elif self.rect.right >= 900:
+        elif self.rect.right >= 960:
             self.direction = -1

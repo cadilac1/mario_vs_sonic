@@ -15,7 +15,7 @@ class Game:
 
         self.window = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 
-        pygame.display.set_caption("Mini Mario")
+        pygame.display.set_caption("Mario vs Sonic")
 
         self.clock = pygame.time.Clock()
 
@@ -39,7 +39,6 @@ class Game:
             elif self.state == SCORE:
                 score = Score(self.window)
                 self.state = score.run()
-
 
             elif self.state == SAIR:
 

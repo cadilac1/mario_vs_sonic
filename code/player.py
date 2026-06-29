@@ -19,6 +19,8 @@ class Player(Entity):
 
         self.on_ground = True
 
+        self.facing_right = True
+
     def update(self):
 
         keys = pygame.key.get_pressed()
@@ -26,9 +28,11 @@ class Player(Entity):
         # Movimento horizontal
         if keys[pygame.K_LEFT] or keys[pygame.K_a]:
             self.rect.x -= self.speed
+            self.facing_right = False
 
         if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
             self.rect.x += self.speed
+            self.facing_right = True
 
         # Pulo
         if (keys[pygame.K_SPACE] or keys[pygame.K_UP]) and self.on_ground:
@@ -48,6 +52,13 @@ class Player(Entity):
             self.vel_y = 0
 
             self.on_ground = True
+
+        if self.facing_right:
+            self.image = self.original_image
+        else:
+            self.image = pygame.transform.flip(
+                self.original_image, True, False
+            )
 
         # Limites da tela
         if self.rect.left < 0:

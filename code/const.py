@@ -20,8 +20,8 @@ BLUE = (0, 0, 255)
 
 FONT_NAME = "Lucida Sans Typewriter"
 
-MENU_BG = "asset/MenuBg.png"
-SCORE_BG = "asset/ScoreBg.png"
+MENU_BG = "asset/aaa2.jpg"
+SCORE_BG = "asset/aaa.jpg"
 NIVEL_BG = "asset/game.png"
 
 PLAYER_IMG = "asset/mario.png"
